@@ -2542,7 +2542,7 @@
 /datum/status_effect/debuff/baothadrained
 	id = "baothadrained"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/baothadrained
-	effectedstats = list("strength" = -1, "intelligence" = -1, "perception" = -1 , "speed" = -1, "willpower" = -1, "constitution" = -1)
+	effectedstats = list("strength" = -1, "intelligence" = -1, "perception" = -1 , "speed" = -1, "willpower" = -1, "constitution" = -1, "fortune" = -1)
 	duration = 30 MINUTES
 	var/tier = 1
 
@@ -2553,11 +2553,11 @@
 		tier++
 		switch(tier)
 			if(2)
-				effectedstats = list("strength" = -2, "intelligence" = -2, "perception" = -2 , "speed" = -2, "willpower" = -2, "constitution" = -2)
+				effectedstats = list("strength" = -2, "intelligence" = -2, "perception" = -2 , "speed" = -2, "willpower" = -2, "constitution" = -2, "fortune" = -2)
 				linked_alert.name = "Vitality Drained (II)"
 				linked_alert.desc = "That really took it out of me..."
 			if(3)
-				effectedstats = list("strength" = -3, "intelligence" = -3, "perception" = -3 , "speed" = -3, "willpower" = -3, "constitution" = -3)
+				effectedstats = list("strength" = -3, "intelligence" = -3, "perception" = -3 , "speed" = -3, "willpower" = -3, "constitution" = -3, "fortune" = -3)
 				linked_alert.name = "Vitality Drained (III)"
 				linked_alert.desc = "I feel like I lost a part of myself..."
 		on_apply()
