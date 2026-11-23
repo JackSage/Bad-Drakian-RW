@@ -2497,8 +2497,8 @@
 	return list(STATKEY_WIL = for_tier, STATKEY_LCK = for_tier)
 
 /datum/status_effect/buff/baothasbanquet/proc/tier_up(mob/living/victim)
-	if(victim in poor_bastards)
-		return FALSE
+	//if(victim in poor_bastards)
+		//return FALSE
 	poor_bastards += victim
 	refresh()
 	if(tier >= 3)
@@ -2543,7 +2543,7 @@
 	id = "baothadrained"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/baothadrained
 	effectedstats = list("strength" = -1, "intelligence" = -1, "perception" = -1 , "speed" = -1, "willpower" = -1, "constitution" = -1)
-	duration = 10 MINUTES
+	duration = 30 MINUTES
 	var/tier = 1
 
 /datum/status_effect/debuff/baothadrained/proc/tier_up()
