@@ -564,8 +564,8 @@
 	if(!oral && (orifice & SEX_PART_TAIL_MAW) && !(source_part & SEX_PART_TAIL_MAW))
 		user.try_impregnate(effective_target, SEX_PART_TAIL_MAW)
 
-	//EVIL BAOTHAN STATDRAIN
-	if(effective_target && HAS_TRAIT(user, TRAIT_DEPRAVED) && user.cmode && user.devotion && user.devotion.level >= CLERIC_T0 && !user.has_status_effect(/datum/status_effect/debuff/false_drain))
+	// EVIL BAOTHAN STATDRAIN
+	if(consume_charge && effective_target && HAS_TRAIT(user, TRAIT_DEPRAVED) && user.cmode && user.devotion && user.devotion.level >= CLERIC_T0 && !user.has_status_effect(/datum/status_effect/debuff/false_drain))
 		var/datum/status_effect/buff/baothasbanquet/boost_buff = user.has_status_effect(/datum/status_effect/buff/baothasbanquet)
 		if(boost_buff)
 			boost_buff.tier_up(effective_target)
@@ -578,7 +578,7 @@
 		else
 			effective_target.apply_status_effect(/datum/status_effect/debuff/baothadrained)
 		effective_target.playsound_local(user, 'sound/misc/mat/lvldown.ogg', 100)
-	if(effective_target && HAS_TRAIT(effective_target, TRAIT_DEPRAVED) && effective_target.cmode && effective_target.devotion && effective_target.devotion.level >= CLERIC_T0 && !effective_target.has_status_effect(/datum/status_effect/debuff/false_drain))
+	if(consume_charge && effective_target && HAS_TRAIT(effective_target, TRAIT_DEPRAVED) && effective_target.cmode && effective_target.devotion && effective_target.devotion.level >= CLERIC_T0 && !effective_target.has_status_effect(/datum/status_effect/debuff/false_drain))
 		var/datum/status_effect/buff/baothasbanquet/boost_buff = effective_target.has_status_effect(/datum/status_effect/buff/baothasbanquet)
 		if(boost_buff)
 			boost_buff.tier_up(user)
